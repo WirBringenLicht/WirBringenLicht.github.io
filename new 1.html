@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blackout – Wir bringen Licht ins Dunkle</title>
+  <meta name="description" content="Aufklärung, Vorbereitung, Checkliste und Quiz zum Thema Blackout in Österreich. Projekt 2GI • BSBAU • we.do.it 2025." />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0b0b; --bg2:#151515; --text:#f3f3f3; --muted:#c2c2c2;
+      --card:rgba(255,255,255,.04); --line:rgba(255,255,255,.10);
+      /* Neue Akzente in Rot & Gelb (BSBAU-Stil) */
+      --accent:#b5121b;   /* Rot */
+      --accent2:#f5c542;  /* Gelb */
+      --warn:#f59e0b;     /* Gold/Warnhinweis */
+      --radius:18px; --shadow:0 10px 28px rgba(0,0,0,.25)
+    }
+    *{box-sizing:border-box} html,body{margin:0}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial; background:linear-gradient(160deg,#0b0b0b,#161616); color:var(--text)}
+    a{color:var(--accent2);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    header{position:sticky;top:0;z-index:40;background:rgba(17,17,17,.85);backdrop-filter:blur(10px);border-bottom:2px solid var(--accent)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .brand{display:flex;align-items:center;gap:.8rem;font-weight:800}
+    .brand img{height:38px;width:auto;display:block;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5))}
+    .links{display:flex;gap:.9rem;align-items:center}
+    .links a{padding:.45rem .7rem;border-radius:10px}
+    .links a.active,.links a:hover{background:rgba(255,255,255,.08)}
+    main{padding:28px 0 60px}
+    .hero{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center}
+    h1{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.1;margin:.3rem 0 1rem}
+    h2{font-size:1.6rem;margin:0 0 .8rem}
+    .lead{color:#e0e0e0}
+    .card{border:1px solid var(--line);border-radius:var(--radius);background:linear-gradient(180deg,var(--card),rgba(255,255,255,.02));box-shadow:var(--shadow)}
+    .pad{padding:1rem}
+    .grid{display:grid;gap:1rem}
+    .tips{grid-template-columns:repeat(3,1fr)}
+    .two{grid-template-columns:1fr 1fr}
+    .one{grid-template-columns:1fr}
+    .pill{display:inline-block;padding:.2rem .55rem;border-radius:999px;font-size:.72rem;font-weight:800;color:#2b1000;background:linear-gradient(135deg,var(--accent2),#ffd86a)}
+    .btn{display:inline-flex;gap:.5rem;align-items:center;padding:.8rem 1rem;border:1px solid var(--line);border-radius:14px;background:#1a1a1a;color:var(--text);font-weight:700;cursor:pointer}
+    .btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#2b1000;border:none}
+    .btn.primary:hover{filter:brightness(1.1)}
+    .btn.ghost:hover{background:rgba(255,255,255,.08);border-color:var(--accent2);color:var(--accent2)}
+    .muted{color:var(--muted)}
+    .callout{border-left:4px solid var(--warn);background:rgba(245,158,11,.12);border:1px solid var(--line);border-radius:12px;padding:1rem}
+    .hero-art{aspect-ratio:4/3;border-radius:var(--radius);position:relative;overflow:hidden}
+    .hero-art .glow{position:absolute;inset:auto 10% -15% -10%;height:70%;background:radial-gradient(60% 60% at 50% 50%,rgba(245,197,66,.25),transparent 70%);filter:blur(32px)}
+    footer{padding:34px 0;border-top:1px solid var(--line);color:var(--muted)}
+    @media(max-width:960px){.hero{grid-template-columns:1fr}.tips{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}}
+    @media(max-width:640px){.tips{grid-template-columns:1fr}}
+    @media print{header,footer{display:none} body{background:white;color:#111} .card{box-shadow:none;border-color:#e5e7eb}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <img src="elemente_schriftzug_inv-1.png" alt="BSBAU Logo"/>
+        <span>Blackout – Wir bringen Licht ins Dunkle</span>
+      </div>
+      <nav class="links" aria-label="Navigation">
+        <a href="#/" data-route="/" class="active">Start</a>
+        <a href="#/vorbereitung" data-route="/vorbereitung">Vorbereitung</a>
+        <a href="#/checkliste" data-route="/checkliste">Checkliste</a>
+        <a href="#/quiz" data-route="/quiz">Quiz</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap" id="app"></main>
+
+  <footer>
+    <div class="wrap">
+      <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <p>© 2025 2GI • BSBAU • we.do.it • Blackout-Info für Österreich</p>
+        <p><a href="#" onclick="window.print();return false;">Seite drucken</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const app = document.getElementById('app');
+    const navLinks = document.querySelectorAll('.links a');
+    function setActive(route){ navLinks.forEach(a=>a.classList.toggle('active', a.getAttribute('data-route')===route)); }
+
+    const Home = () => `
+      <section class="hero">
+        <div>
+          <span class="pill">Start</span>
+          <h1>Blackout verstehen – ruhig bleiben & informiert handeln</h1>
+          <p class="lead">Was passiert bei einem großflächigen Stromausfall? Wie bleiben Kommunikation, Gesundheit und Versorgung gesichert? Diese Seite bündelt kompakte Infos, österreichische Notrufnummern und praktische Tools – inklusive Checkliste & Quiz.</p>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap;margin-top:1rem">
+            <a class="btn primary" href="#/vorbereitung">Jetzt vorbereiten</a>
+            <a class="btn ghost" href="#/checkliste">Checkliste öffnen</a>
+            <a class="btn ghost" href="#/quiz">Quiz starten</a>
+          </div>
+          <p class="muted" style="margin-top:.75rem">Notruf: <strong>112</strong> (EU), <strong>144</strong> Rettung, <strong>122</strong> Feuerwehr, <strong>133</strong> Polizei, <strong>1450</strong> Gesundheitstelefon.</p>
+        </div>
+        <div class="card hero-art">
+          <div class="glow"></div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
+            <svg viewBox="0 0 256 256" width="70%" role="img" aria-label="Taschenlampe mit Lichtkegel">
+              <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#b5121b"/><stop offset="100%" stop-color="#f5c542"/></linearGradient></defs>
+              <rect x="30" y="160" width="70" height="24" rx="8" fill="#1a1a1a"/>
+              <path d="M100 172h120l-88-52-32 52Z" fill="url(#g)" opacity=".95"/>
+              <circle cx="180" cy="150" r="6" fill="#f5c542"/>
+            </svg>
+          </div>
+        </div>
+      </section>
+    `;
+
+    const Prep = () => `
+      <section class="grid two">
+        <article class="card pad">
+          <span class="pill">Vorbereitung</span>
+          <h2>Dein 72-Stunden-Plan</h2>
+          <ul>
+            <li>Wasser & Nahrung</li>
+            <li>Hygiene & Medikamente</li>
+            <li>Information & Kommunikation</li>
+            <li>Treffpunkte & Notfallplan</li>
+          </ul>
+        </article>
+        <article class="card pad">
+          <h2>Wichtige Nummern (AT)</h2>
+          <p><strong>112</strong> EU-Notruf – <strong>144</strong> Rettung – <strong>122</strong> Feuerwehr – <strong>133</strong> Polizei – <strong>1450</strong> Gesundheitstelefon</p>
+        </article>
+      </section>
+    `;
+
+    const ITEMS = [
+      {id:'wasser', label:'2–3 Liter Wasser/Person/Tag (3 Tage)'},
+      {id:'essen', label:'Haltbare Lebensmittel'},
+      {id:'radio', label:'Batterie-/Kurbelradio'},
+      {id:'licht', label:'Taschenlampe + Batterien'},
+      {id:'power', label:'Powerbank(s) & Kabel'},
+      {id:'med', label:'Medikamente & Verbandszeug'},
+      {id:'hyg', label:'Hygieneartikel'},
+      {id:'plan', label:'Treffpunkt & Kontaktliste'}
+    ];
+
+    const Checklist = () => `
+      <section class="card pad">
+        <h2>Checkliste</h2>
+        <p class="muted">Deine Auswahl wird gespeichert.</p>
+        <div id="list" class="grid one" style="margin-top:1rem"></div>
+        <button class="btn" onclick="resetChecklist()">Zurücksetzen</button>
+      </section>
+    `;
+
+    function renderChecklist(){
+      const container = document.getElementById('list'); if(!container) return;
+      container.innerHTML='';
+      ITEMS.forEach(item=>{
+        const checked = localStorage.getItem('chk_'+item.id)==='1';
+        const el = document.createElement('label');
+        el.className='card pad';
+        el.style.display='flex'; el.style.alignItems='center'; el.style.gap='.7rem';
+        el.innerHTML = `
+          <input type="checkbox" ${checked?'checked':''} data-id="${item.id}">
+          <span>${item.label}</span>
+        `;
+        el.querySelector('input').addEventListener('change',e=>{
+          localStorage.setItem('chk_'+item.id, e.target.checked?'1':'0');
+        });
+        container.appendChild(el);
+      });
+    }
+    function resetChecklist(){ ITEMS.forEach(i=>localStorage.removeItem('chk_'+i.id)); renderChecklist(); }
+
+    const Quiz = () => `
+      <section class="card pad">
+        <h2>Quiz</h2>
+        <p class="muted">Teste dich!</p>
+        <div id="quiz"></div>
+        <button class="btn" onclick="restartQuiz()">Neu</button>
+        <button class="btn primary" onclick="showResults()">Ergebnis</button>
+      </section>
+    `;
+
+    const QUESTIONS = [
+      {q:'Wann ist es ein Blackout?', a:['Kurz lokal','Groß & länger'], c:1},
+      {q:'Beste Infoquelle?', a:['Radio','TikTok'], c:0},
+      {q:'Wassermenge/Tag/Person?', a:['0.5 L','2–3 L'], c:1},
+      {q:'Was meiden?', a:['Aufzug','Radio'], c:0},
+      {q:'Notruf Rettung?', a:['144','133'], c:0}
+    ];
+
+    let userAnswers = Array(QUESTIONS.length).fill(null);
+    function renderQuiz(){
+      const box = document.getElementById('quiz'); if(!box) return;
+      box.innerHTML='';
+      QUESTIONS.forEach((Q,i)=>{
+        const div=document.createElement('div');
+        div.className='card pad'; div.style.marginBottom='.5rem';
+        div.innerHTML='<h3>'+(i+1)+'. '+Q.q+'</h3>';
+        Q.a.forEach((opt,j)=>{
+          const l=document.createElement('label');
+          l.style.display='flex';l.style.alignItems='center';l.style.gap='.5rem';
+          l.innerHTML=`<input type="radio" name="q${i}"> <span>${opt}</span>`;
+          l.querySelector('input').addEventListener('change',()=>userAnswers[i]=j);
+          div.appendChild(l);
+        });
+        box.appendChild(div);
+      });
+      box.appendChild(document.createElement('div')).id='quiz-result';
+    }
+    function showResults(){
+      const res=document.getElementById('quiz-result');
+      let score=0;
+      QUESTIONS.forEach((Q,i)=>{
+        if(userAnswers[i]===Q.c) score++;
+      });
+      res.innerHTML='<p><strong>Ergebnis: '+score+'/'+QUESTIONS.length+'</strong></p>';
+    }
+    function restartQuiz(){ userAnswers=Array(QUESTIONS.length).fill(null); renderQuiz(); }
+
+    function render(r){
+      setActive(r);
+      if(r==='/'||r===''){ app.innerHTML=Home(); }
+      if(r==='/vorbereitung'){ app.innerHTML=Prep(); }
+      if(r==='/checkliste'){ app.innerHTML=Checklist(); renderChecklist(); }
+      if(r==='/quiz'){ app.innerHTML=Quiz(); renderQuiz(); }
+    }
+    function router(){ render(location.hash.replace('#','')||'/'); }
+    window.addEventListener('hashchange',router);
+    router();
+  </script>
+</body>
+</html>
